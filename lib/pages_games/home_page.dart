@@ -17,7 +17,7 @@ class LotterySystemsProvider extends Notifier<LotterieSystemsState> {
           ],
           iconPath: 'assets/icons/lotto.png',
           gameColor: const Color.fromRGBO(255, 255, 0, 1),
-          textColor: Colors.red,
+          textColor: const Color.fromARGB(255, 243, 18, 2),
         ),
         LotterySystem(
           id: 'id3',
@@ -143,10 +143,12 @@ class LotteryPickerView extends ConsumerWidget {
                             child: Text(
                               lotterySystem.name,
                               style: TextStyle(
+                                letterSpacing: 1.5,
+                                fontWeight: FontWeight.w600,
                                 shadows: const <Shadow>[
                                   Shadow(
                                     offset: Offset(1.0, 1.0),
-                                    blurRadius: 1.0,
+                                    blurRadius: 2.0,
                                     color: Color.fromARGB(255, 0, 0, 0),
                                   ),
                                 ],

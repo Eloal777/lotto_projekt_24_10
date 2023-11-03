@@ -1,10 +1,12 @@
 import 'dart:math';
-import 'dart:ui';
+
+import 'package:flutter/material.dart';
 
 class LotterieSystemsState {
   final List<LotterySystem> lotterySystems;
-
-  LotterieSystemsState({required this.lotterySystems});
+  LotterieSystemsState({
+    required this.lotterySystems,
+  });
 }
 
 class LotterySystem {
@@ -50,4 +52,28 @@ class LotteryDraw {
   final bool sorted;
 
   LotteryDraw({required this.min, required this.max, required this.draws, this.sorted = false});
+}
+
+class RegistrationWindowState {
+  final List<RegistrationWindow> registration;
+  RegistrationWindowState({
+    required this.registration,
+  });
+}
+
+class RegistrationWindow {
+  final String nickName;
+  final String email;
+  final String password;
+
+  RegistrationWindow({
+    required this.nickName,
+    required this.email,
+    required this.password,
+  });
+  final birthDay = DatePickerDialog(
+    initialDate: DateTime.now(),
+    firstDate: DateTime.utc(1900),
+    lastDate: DateTime.utc(2100),
+  );
 }
