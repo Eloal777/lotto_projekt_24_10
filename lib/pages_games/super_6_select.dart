@@ -1,29 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:lotto_projekt_24_10/pages_games/home_page.dart';
-import 'package:lotto_projekt_24_10/pages_games/lotto_6_aus_49_result_page.dart';
 import 'package:lotto_projekt_24_10/pages_games/navigation_drawer.dart';
+import 'package:lotto_projekt_24_10/pages_games/super_6_result.dart';
 
 // final registerProvider = StateProvider<int>((ref) => 0);
 
-class SelectPage6aus49 extends StatefulWidget {
-  const SelectPage6aus49({
+class Super6SelectPage extends StatelessWidget {
+  const Super6SelectPage({
     super.key,
   });
-//  required LotterySystem lotterysystem
-  @override
-  State<SelectPage6aus49> createState() => _SelectPage6aus49State();
-}
 
-class _SelectPage6aus49State extends State<SelectPage6aus49> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: const Color.fromRGBO(252, 220, 23, 1),
+        backgroundColor: const Color.fromRGBO(195, 0, 96, 1),
         title: const Text(
-          'Lotto 6 aus 49',
+          'Super 6',
+          style: TextStyle(
+            color: Color.fromRGBO(240, 191, 76, 1),
+          ),
         ),
       ),
       drawer: const AppNavigationDrawer(),
@@ -44,8 +41,7 @@ class _SelectPage6aus49State extends State<SelectPage6aus49> {
                 ),
                 const Padding(
                   padding: EdgeInsets.all(12.0),
-                  child: Text(
-                      'Hier können sie Lottozahlen 6 aus 49\ngenerieren lassen indem sie \nZufallszahlen, Geburtstagszahlen \noder Lieblingszahlen auswählen.'),
+                  child: Text('Hier können sie sich die Scheinnummer \nfür das Spiel Super 6 Generieren lassen'),
                 ),
                 Container(
                   margin: const EdgeInsets.only(top: 60.0, bottom: 60),
@@ -64,16 +60,22 @@ class _SelectPage6aus49State extends State<SelectPage6aus49> {
                           padding: const EdgeInsets.all(12.0),
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color.fromRGBO(252, 220, 23, 1),
+                              backgroundColor: const Color.fromRGBO(195, 0, 96, 1),
                               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                              textStyle: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                              textStyle:
+                                  const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
                             ),
                             onPressed: () {
                               Navigator.of(context).pushReplacement(
-                                MaterialPageRoute(builder: (context) => const ResultPage6aus49()),
+                                MaterialPageRoute(builder: (context) => const Super6ResultPage()),
                               );
                             },
-                            child: const Text('Zufallszahlen'),
+                            child: const Text(
+                              'Zufallszahlen',
+                              style: TextStyle(
+                                color: Color.fromRGBO(255, 255, 255, 1),
+                              ),
+                            ),
                           ),
                         ),
                       ),
@@ -83,16 +85,22 @@ class _SelectPage6aus49State extends State<SelectPage6aus49> {
                           padding: const EdgeInsets.all(12.0),
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color.fromRGBO(252, 220, 23, 1),
+                              backgroundColor: const Color.fromRGBO(195, 0, 96, 1),
                               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                              textStyle: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                              textStyle:
+                                  const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
                             ),
                             onPressed: () {
                               Navigator.of(context).pushReplacement(
-                                MaterialPageRoute(builder: (context) => const ResultPage6aus49()),
+                                MaterialPageRoute(builder: (context) => const Super6ResultPage()),
                               );
                             },
-                            child: const Text('Lieblingszahlen'),
+                            child: const Text(
+                              'Lieblingszahlen',
+                              style: TextStyle(
+                                color: Color.fromRGBO(255, 255, 255, 1),
+                              ),
+                            ),
                           ),
                         ),
                       ),
@@ -102,16 +110,22 @@ class _SelectPage6aus49State extends State<SelectPage6aus49> {
                           padding: const EdgeInsets.all(12.0),
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color.fromRGBO(252, 220, 23, 1),
+                              backgroundColor: const Color.fromRGBO(195, 0, 96, 1),
                               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                              textStyle: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                              textStyle:
+                                  const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
                             ),
                             onPressed: () {
                               Navigator.of(context).pushReplacement(
-                                MaterialPageRoute(builder: (context) => const ResultPage6aus49()),
+                                MaterialPageRoute(builder: (context) => const Super6ResultPage()),
                               );
                             },
-                            child: const Text('Geburtstagtagszahlen'),
+                            child: const Text(
+                              'Geburtstagtagszahlen',
+                              style: TextStyle(
+                                color: Color.fromRGBO(255, 255, 255, 1),
+                              ),
+                            ),
                           ),
                         ),
                       ),

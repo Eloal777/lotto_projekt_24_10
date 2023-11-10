@@ -1,12 +1,15 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 class LotterieSystemsState {
   final List<LotterySystem> lotterySystems;
+  final bool isRegistrated;
+  // final int selectedGameId;
   LotterieSystemsState({
     required this.lotterySystems,
-  });
+    // required this.selectedGameId,
+    isRegistrated,
+  }) : isRegistrated = false;
 }
 
 class LotterySystem {

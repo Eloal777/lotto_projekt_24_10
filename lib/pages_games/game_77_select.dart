@@ -1,32 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:lotto_projekt_24_10/pages_games/game_77_result.dart';
 import 'package:lotto_projekt_24_10/pages_games/home_page.dart';
 import 'package:lotto_projekt_24_10/pages_games/lotto_6_aus_49_result_page.dart';
-import 'package:lotto_projekt_24_10/pages_games/navigation_drawer.dart';
 
 // final registerProvider = StateProvider<int>((ref) => 0);
 
-class SelectPage6aus49 extends StatefulWidget {
-  const SelectPage6aus49({
+class SelectPage77 extends StatefulWidget {
+  const SelectPage77({
     super.key,
   });
 //  required LotterySystem lotterysystem
   @override
-  State<SelectPage6aus49> createState() => _SelectPage6aus49State();
+  State<SelectPage77> createState() => _SelectPage77State();
 }
 
-class _SelectPage6aus49State extends State<SelectPage6aus49> {
+class _SelectPage77State extends State<SelectPage77> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: const Color.fromRGBO(252, 220, 23, 1),
+        backgroundColor: Color.fromRGBO(1, 150, 219, 1),
         title: const Text(
-          'Lotto 6 aus 49',
+          'Spiel 77',
         ),
       ),
-      drawer: const AppNavigationDrawer(),
       body: Center(
         child: ListView(
           children: [
@@ -44,8 +43,7 @@ class _SelectPage6aus49State extends State<SelectPage6aus49> {
                 ),
                 const Padding(
                   padding: EdgeInsets.all(12.0),
-                  child: Text(
-                      'Hier können sie Lottozahlen 6 aus 49\ngenerieren lassen indem sie \nZufallszahlen, Geburtstagszahlen \noder Lieblingszahlen auswählen.'),
+                  child: Text('Hier können sie die Zahlen für das Spiel 77 Generieren'),
                 ),
                 Container(
                   margin: const EdgeInsets.only(top: 60.0, bottom: 60),
@@ -64,13 +62,13 @@ class _SelectPage6aus49State extends State<SelectPage6aus49> {
                           padding: const EdgeInsets.all(12.0),
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color.fromRGBO(252, 220, 23, 1),
+                              backgroundColor: Color.fromRGBO(1, 150, 219, 1),
                               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                               textStyle: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                             ),
                             onPressed: () {
                               Navigator.of(context).pushReplacement(
-                                MaterialPageRoute(builder: (context) => const ResultPage6aus49()),
+                                MaterialPageRoute(builder: (context) => const Game77ResultPage()),
                               );
                             },
                             child: const Text('Zufallszahlen'),
@@ -83,13 +81,13 @@ class _SelectPage6aus49State extends State<SelectPage6aus49> {
                           padding: const EdgeInsets.all(12.0),
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color.fromRGBO(252, 220, 23, 1),
+                              backgroundColor: Color.fromRGBO(1, 150, 219, 1),
                               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                               textStyle: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                             ),
                             onPressed: () {
                               Navigator.of(context).pushReplacement(
-                                MaterialPageRoute(builder: (context) => const ResultPage6aus49()),
+                                MaterialPageRoute(builder: (context) => const Game77ResultPage()),
                               );
                             },
                             child: const Text('Lieblingszahlen'),
@@ -102,13 +100,13 @@ class _SelectPage6aus49State extends State<SelectPage6aus49> {
                           padding: const EdgeInsets.all(12.0),
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color.fromRGBO(252, 220, 23, 1),
+                              backgroundColor: Color.fromRGBO(1, 150, 219, 1),
                               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                               textStyle: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                             ),
                             onPressed: () {
                               Navigator.of(context).pushReplacement(
-                                MaterialPageRoute(builder: (context) => const ResultPage6aus49()),
+                                MaterialPageRoute(builder: (context) => const Game77ResultPage()),
                               );
                             },
                             child: const Text('Geburtstagtagszahlen'),

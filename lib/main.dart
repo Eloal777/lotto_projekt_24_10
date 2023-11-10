@@ -1,7 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:lotto_projekt_24_10/appstate.dart';
+import 'package:lotto_projekt_24_10/lotteriesystem.dart';
+import 'package:lotto_projekt_24_10/pages_games/eurojackpot_result.dart';
+import 'package:lotto_projekt_24_10/pages_games/home_page.dart';
+import 'package:lotto_projekt_24_10/pages_games/lotto_6_aus_49_result_page.dart';
+import 'package:lotto_projekt_24_10/pages_games/lotto_6_aus_49_select_page.dart';
+import 'package:lotto_projekt_24_10/pages_games/navigation_drawer.dart';
+import 'package:lotto_projekt_24_10/pages_games/registration.dart';
+import 'package:lotto_projekt_24_10/pages_games/settings_design.dart';
+import 'package:lotto_projekt_24_10/pages_games/settings_login_sucess.dart';
+import 'package:lotto_projekt_24_10/pages_games/welcome_once.dart';
 import 'package:lotto_projekt_24_10/user.dart';
-import 'old_home_page.dart';
+
+import 'pages_games/eurojackpot_select.dart';
 
 //Noch ein schöner Provider ist StateNotifier und StateNotifierProvider
 //Sie sind Ideal zum Statemanagement die mit User Interaktion zutun haben
@@ -21,20 +33,28 @@ import 'old_home_page.dart';
 // final nameProvider = StateProvider<String?>((ref) => null);
 
 //Um Auf Daten aus der Userklasse zuzugreifen erstellen wir den StateNotifierProvider
-final userProvider = StateNotifierProvider<UserNotifier, User>(((ref) => UserNotifier()));
+// final userProvider = StateNotifierProvider<UserNotifier, User>(((ref) => UserNotifier()));
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Riverpod',
-      home: MyHomePage(),
+      home: LotteryPickerView(),
+      // initialRoute: '/Welcomeonce',
+      // routes: {
+      //   '$WelcomeOnce()': (context) => const WelcomeOnce(),
+      //   '$SelectPage6aus49': (context) => const SelectPage6aus49(),
+      // },
+
+      // WelcomeOnce , MyHomePage , ResultPage
     );
   }
 }

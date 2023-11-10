@@ -1,26 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:lotto_projekt_24_10/pages_games/lotto_6_aus_49_select_page.dart';
 import 'package:lotto_projekt_24_10/pages_games/navigation_drawer.dart';
+import 'package:lotto_projekt_24_10/pages_games/super_6_select.dart';
 
 // final registerProvider = StateProvider<int>((ref) => 0);
 
-class ResultPage6aus49 extends StatefulWidget {
-  const ResultPage6aus49({super.key});
+class Super6ResultPage extends StatefulWidget {
+  const Super6ResultPage({super.key});
 
   @override
-  State<ResultPage6aus49> createState() => _ResultPage6aus49State();
+  State<Super6ResultPage> createState() => _Super6ResultPageState();
 }
 
-class _ResultPage6aus49State extends State<ResultPage6aus49> {
+class _Super6ResultPageState extends State<Super6ResultPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: const Color.fromRGBO(252, 220, 23, 1),
+        backgroundColor: const Color.fromRGBO(195, 0, 96, 1),
         title: const Text(
-          'Lotto 6 aus 49',
+          'Super 6',
         ),
       ),
       drawer: const AppNavigationDrawer(),
@@ -37,19 +38,19 @@ class _ResultPage6aus49State extends State<ResultPage6aus49> {
                   children: [
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color.fromRGBO(252, 220, 23, 1),
+                        backgroundColor: const Color.fromRGBO(195, 0, 96, 1),
                         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                       ),
                       onPressed: () {
                         Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: (context) => const SelectPage6aus49()),
+                          MaterialPageRoute(builder: (context) => const Super6SelectPage()),
                         );
                       },
                       child: const Text('Zurück'),
                     ),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color.fromRGBO(252, 220, 23, 1),
+                        backgroundColor: const Color.fromRGBO(195, 0, 96, 1),
                         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                       ),
                       onPressed: () {},
