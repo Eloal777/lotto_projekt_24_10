@@ -1,19 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:lotto_projekt_24_10/appstate.dart';
-import 'package:lotto_projekt_24_10/lotteriesystem.dart';
-import 'package:lotto_projekt_24_10/pages_games/eurojackpot_result.dart';
 import 'package:lotto_projekt_24_10/pages_games/home_page.dart';
-import 'package:lotto_projekt_24_10/pages_games/lotto_6_aus_49_result_page.dart';
-import 'package:lotto_projekt_24_10/pages_games/lotto_6_aus_49_select_page.dart';
-import 'package:lotto_projekt_24_10/pages_games/navigation_drawer.dart';
-import 'package:lotto_projekt_24_10/pages_games/registration.dart';
-import 'package:lotto_projekt_24_10/pages_games/settings_design.dart';
-import 'package:lotto_projekt_24_10/pages_games/settings_login_sucess.dart';
-import 'package:lotto_projekt_24_10/pages_games/welcome_once.dart';
-import 'package:lotto_projekt_24_10/user.dart';
-
-import 'pages_games/eurojackpot_select.dart';
 
 //Noch ein schöner Provider ist StateNotifier und StateNotifierProvider
 //Sie sind Ideal zum Statemanagement die mit User Interaktion zutun haben

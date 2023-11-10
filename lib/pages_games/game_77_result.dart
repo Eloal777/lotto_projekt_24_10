@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lotto_projekt_24_10/pages_games/game_77_select.dart';
-import 'package:lotto_projekt_24_10/pages_games/lotto_6_aus_49_select_page.dart';
 import 'package:lotto_projekt_24_10/pages_games/navigation_drawer.dart';
-import 'package:lotto_projekt_24_10/pages_games/super_6_select.dart';
 
 // final registerProvider = StateProvider<int>((ref) => 0);
 
@@ -20,7 +18,7 @@ class _Game77ResultPageState extends State<Game77ResultPage> {
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Color.fromRGBO(1, 150, 219, 1),
+        backgroundColor: const Color.fromRGBO(1, 150, 219, 1),
         title: const Text(
           'Spiel 77',
         ),
@@ -39,7 +37,7 @@ class _Game77ResultPageState extends State<Game77ResultPage> {
                   children: [
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Color.fromRGBO(1, 150, 219, 1),
+                        backgroundColor: const Color.fromRGBO(1, 150, 219, 1),
                         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                       ),
                       onPressed: () {
@@ -51,7 +49,7 @@ class _Game77ResultPageState extends State<Game77ResultPage> {
                     ),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Color.fromRGBO(1, 150, 219, 1),
+                        backgroundColor: const Color.fromRGBO(1, 150, 219, 1),
                         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                       ),
                       onPressed: () {},

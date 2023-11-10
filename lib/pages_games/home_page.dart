@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:lotto_projekt_24_10/lotteriesystem.dart';
 import 'package:lotto_projekt_24_10/pages_games/eurojackpot_select.dart';
-import 'package:lotto_projekt_24_10/pages_games/game_77_result.dart';
 import 'package:lotto_projekt_24_10/pages_games/game_77_select.dart';
 import 'package:lotto_projekt_24_10/pages_games/lotto_6_aus_49_select_page.dart';
 import 'package:lotto_projekt_24_10/pages_games/navigation_drawer.dart';

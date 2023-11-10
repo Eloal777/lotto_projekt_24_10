@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lotto_projekt_24_10/pages_games/game_77_result.dart';
-import 'package:lotto_projekt_24_10/pages_games/home_page.dart';
-import 'package:lotto_projekt_24_10/pages_games/lotto_6_aus_49_result_page.dart';
+import 'package:lotto_projekt_24_10/pages_games/navigation_drawer.dart';
 
 // final registerProvider = StateProvider<int>((ref) => 0);
 
@@ -21,11 +20,12 @@ class _SelectPage77State extends State<SelectPage77> {
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Color.fromRGBO(1, 150, 219, 1),
+        backgroundColor: const Color.fromRGBO(1, 150, 219, 1),
         title: const Text(
           'Spiel 77',
         ),
       ),
+      drawer: const AppNavigationDrawer(),
       body: Center(
         child: ListView(
           children: [
@@ -62,7 +62,7 @@ class _SelectPage77State extends State<SelectPage77> {
                           padding: const EdgeInsets.all(12.0),
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Color.fromRGBO(1, 150, 219, 1),
+                              backgroundColor: const Color.fromRGBO(1, 150, 219, 1),
                               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                               textStyle: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                             ),
@@ -81,7 +81,7 @@ class _SelectPage77State extends State<SelectPage77> {
                           padding: const EdgeInsets.all(12.0),
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Color.fromRGBO(1, 150, 219, 1),
+                              backgroundColor: const Color.fromRGBO(1, 150, 219, 1),
                               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                               textStyle: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                             ),
@@ -100,7 +100,7 @@ class _SelectPage77State extends State<SelectPage77> {
                           padding: const EdgeInsets.all(12.0),
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Color.fromRGBO(1, 150, 219, 1),
+                              backgroundColor: const Color.fromRGBO(1, 150, 219, 1),
                               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                               textStyle: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                             ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lotto_projekt_24_10/pages_games/lotto_6_aus_49_select_page.dart';
 import 'package:lotto_projekt_24_10/pages_games/navigation_drawer.dart';
 import 'package:lotto_projekt_24_10/pages_games/super_6_select.dart';
 
