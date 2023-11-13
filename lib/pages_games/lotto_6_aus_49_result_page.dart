@@ -21,6 +21,9 @@ class _ResultPage6aus49State extends State<ResultPage6aus49> {
         backgroundColor: const Color.fromRGBO(252, 220, 23, 1),
         title: const Text(
           'Lotto 6 aus 49',
+          style: TextStyle(
+            color: Color.fromARGB(255, 243, 18, 2),
+          ),
         ),
       ),
       drawer: const AppNavigationDrawer(),
@@ -45,7 +48,12 @@ class _ResultPage6aus49State extends State<ResultPage6aus49> {
                           MaterialPageRoute(builder: (context) => const SelectPage6aus49()),
                         );
                       },
-                      child: const Text('Zurück'),
+                      child: const Text(
+                        'Zurück',
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 243, 18, 2),
+                        ),
+                      ),
                     ),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
@@ -53,7 +61,12 @@ class _ResultPage6aus49State extends State<ResultPage6aus49> {
                         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                       ),
                       onPressed: () {},
-                      child: const Text('Speichern'),
+                      child: const Text(
+                        'Speichern',
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 243, 18, 2),
+                        ),
+                      ),
                     ),
                   ],
                 ),

@@ -16,10 +16,6 @@ class Registration extends StatelessWidget {
           'Registration',
         ),
       ),
-      drawer: const Drawer(
-        elevation: 0,
-        child: Column(children: [Text("Home"), Divider(), Text("Einstellungen"), Divider(), Text("Info")]),
-      ),
       body: Center(
         child: ListView(
           children: [

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lotto_projekt_24_10/pages_games/home_page.dart';
 import 'package:lotto_projekt_24_10/pages_games/lotto_6_aus_49_result_page.dart';
 import 'package:lotto_projekt_24_10/pages_games/navigation_drawer.dart';
 
@@ -19,13 +20,23 @@ class _SelectPage6aus49State extends State<SelectPage6aus49> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
+        leading: BackButton(
+          onPressed: () {
+            Navigator.of(context).pushReplacement(
+              MaterialPageRoute(builder: (context) => const LotteryPickerView()),
+            );
+          },
+        ),
         centerTitle: true,
         backgroundColor: const Color.fromRGBO(252, 220, 23, 1),
         title: const Text(
           'Lotto 6 aus 49',
+          style: TextStyle(
+            color: Color.fromARGB(255, 243, 18, 2),
+          ),
         ),
       ),
-      drawer: const AppNavigationDrawer(),
+      // drawer: const AppNavigationDrawer(),
       body: Center(
         child: ListView(
           children: [
@@ -72,7 +83,12 @@ class _SelectPage6aus49State extends State<SelectPage6aus49> {
                                 MaterialPageRoute(builder: (context) => const ResultPage6aus49()),
                               );
                             },
-                            child: const Text('Zufallszahlen'),
+                            child: const Text(
+                              'Zufallszahlen',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 243, 18, 2),
+                              ),
+                            ),
                           ),
                         ),
                       ),
@@ -91,7 +107,12 @@ class _SelectPage6aus49State extends State<SelectPage6aus49> {
                                 MaterialPageRoute(builder: (context) => const ResultPage6aus49()),
                               );
                             },
-                            child: const Text('Lieblingszahlen'),
+                            child: const Text(
+                              'Lieblingszahlen',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 243, 18, 2),
+                              ),
+                            ),
                           ),
                         ),
                       ),
@@ -110,7 +131,12 @@ class _SelectPage6aus49State extends State<SelectPage6aus49> {
                                 MaterialPageRoute(builder: (context) => const ResultPage6aus49()),
                               );
                             },
-                            child: const Text('Geburtstagtagszahlen'),
+                            child: const Text(
+                              'Geburtstagtagszahlen',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 243, 18, 2),
+                              ),
+                            ),
                           ),
                         ),
                       ),

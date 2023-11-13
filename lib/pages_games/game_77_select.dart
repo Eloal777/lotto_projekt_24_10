@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lotto_projekt_24_10/pages_games/game_77_result.dart';
+import 'package:lotto_projekt_24_10/pages_games/home_page.dart';
 import 'package:lotto_projekt_24_10/pages_games/navigation_drawer.dart';
 
 // final registerProvider = StateProvider<int>((ref) => 0);
@@ -19,13 +20,20 @@ class _SelectPage77State extends State<SelectPage77> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
+        leading: BackButton(
+          onPressed: () {
+            Navigator.of(context).pushReplacement(
+              MaterialPageRoute(builder: (context) => const LotteryPickerView()),
+            );
+          },
+        ),
         centerTitle: true,
         backgroundColor: const Color.fromRGBO(1, 150, 219, 1),
         title: const Text(
           'Spiel 77',
         ),
       ),
-      drawer: const AppNavigationDrawer(),
+      // drawer: const AppNavigationDrawer(),
       body: Center(
         child: ListView(
           children: [
@@ -43,7 +51,7 @@ class _SelectPage77State extends State<SelectPage77> {
                 ),
                 const Padding(
                   padding: EdgeInsets.all(12.0),
-                  child: Text('Hier können sie die Zahlen für das Spiel 77 Generieren'),
+                  child: Text('Hier können sie die Scheinnummer \nfür das Spiel 77 Generieren'),
                 ),
                 Container(
                   margin: const EdgeInsets.only(top: 60.0, bottom: 60),

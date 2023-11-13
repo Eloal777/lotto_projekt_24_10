@@ -23,7 +23,7 @@ class _SettingsDesignLoggedInState extends State<SettingsDesignLoggedIn> {
           'Einstellungen',
         ),
       ),
-      drawer: const AppNavigationDrawer(),
+      // drawer: const AppNavigationDrawer(),
       body: Center(
         child: ListView(
           children: [

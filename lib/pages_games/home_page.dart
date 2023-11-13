@@ -5,7 +5,10 @@ import 'package:lotto_projekt_24_10/pages_games/eurojackpot_select.dart';
 import 'package:lotto_projekt_24_10/pages_games/game_77_select.dart';
 import 'package:lotto_projekt_24_10/pages_games/lotto_6_aus_49_select_page.dart';
 import 'package:lotto_projekt_24_10/pages_games/navigation_drawer.dart';
+import 'package:lotto_projekt_24_10/pages_games/registration.dart';
+import 'package:lotto_projekt_24_10/pages_games/settings_login_sucess.dart';
 import 'package:lotto_projekt_24_10/pages_games/super_6_select.dart';
+import 'package:lotto_projekt_24_10/pages_games/welcome_once.dart';
 
 final lotterySystemsProvider = NotifierProvider<LotterySystemsProvider, LotterieSystemsState>(
   () => LotterySystemsProvider(),
@@ -68,11 +71,22 @@ class LotterySystemsProvider extends Notifier<LotterieSystemsState> {
       ]);
 }
 
-class LotteryPickerView extends ConsumerWidget {
+class LotteryPickerView extends ConsumerStatefulWidget {
   const LotteryPickerView({super.key});
-
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<LotteryPickerView> createState() => _LotteryPickerViewState();
+}
+
+class _LotteryPickerViewState extends ConsumerState<LotteryPickerView> {
+  int currentIndex = 0;
+  final screens = [
+    const LotteryPickerView(),
+    const SettingsDesignLoggedIn(),
+    const Registration(),
+    const WelcomeOnce(),
+  ];
+  @override
+  Widget build(BuildContext context) {
     final lotterySystemsState = ref.watch(lotterySystemsProvider);
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
@@ -84,7 +98,9 @@ class LotteryPickerView extends ConsumerWidget {
         ),
       ),
       drawer: const AppNavigationDrawer(),
-      body: Center(
+      body:
+          // screens[currentIndex],
+          Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -94,11 +110,11 @@ class LotteryPickerView extends ConsumerWidget {
                 alignment: Alignment.center,
                 width: 150,
                 height: 25,
-                color: Colors.black,
+                color: const Color.fromARGB(255, 226, 224, 224),
                 child: const Center(
                   child: Text(
                     'Username!',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
                   ),
                 ),
               ),
@@ -111,7 +127,7 @@ class LotteryPickerView extends ConsumerWidget {
               height: 400,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(50),
-                color: const Color.fromRGBO(29, 29, 29, 1),
+                color: const Color.fromARGB(255, 230, 227, 227),
               ),
               child: Column(
                 children: [
@@ -120,7 +136,7 @@ class LotteryPickerView extends ConsumerWidget {
                     child: Text(
                       'Was möchten sie \n heute Spielen?',
                       textAlign: TextAlign.center,
-                      style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
+                      style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
                     ),
                   ),
                   const SizedBox(
@@ -195,23 +211,73 @@ class LotteryPickerView extends ConsumerWidget {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        currentIndex: currentIndex,
+        onTap: (index) {
+          switch (index) {
+            case 0:
+              // Navigate to the Home screen
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (BuildContext context) => const LotteryPickerView(),
+                ),
+              );
+              break;
+            case 1:
+              // Navigate to the SettingsDesignLoggedIn screen
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext context) => const SettingsDesignLoggedIn(),
+                ),
+              );
+              break;
+            case 2:
+              // Navigate to the Registration screen
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext context) => const Registration(),
+                ),
+              );
+              break;
+            case 3:
+              // Navigate to the WelcomeOnce screen
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext context) => const WelcomeOnce(),
+                ),
+              );
+              break;
+          }
+        },
         fixedColor: const Color.fromARGB(255, 255, 255, 255),
-        backgroundColor: const Color.fromRGBO(29, 29, 29, 1),
+        backgroundColor: const Color.fromRGBO(1, 100, 4, 1),
         unselectedLabelStyle: const TextStyle(color: Color.fromARGB(255, 0, 0, 0), fontSize: 12),
-        selectedLabelStyle: const TextStyle(color: Color.fromARGB(255, 0, 0, 0), fontSize: 14),
+        selectedLabelStyle: const TextStyle(color: Color.fromARGB(255, 255, 255, 255), fontSize: 14),
 //Sie braucht mindestens zwei Widgets in ihr weil es eine liste ist siehe eckige klammern
         items: const [
           BottomNavigationBarItem(
+            backgroundColor: Colors.grey,
             icon: Icon(
               Icons.home,
-              color: Color.fromARGB(255, 255, 255, 255),
             ),
             label: 'Home',
           ),
           BottomNavigationBarItem(
               icon: Icon(
+                Icons.portrait_outlined,
+              ),
+              label: 'Profil'),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.settings,
+              ),
+              label: 'Einstellungen'),
+          BottomNavigationBarItem(
+              icon: Icon(
                 Icons.history_outlined,
-                color: Color.fromARGB(255, 255, 255, 255),
               ),
               label: 'Verlauf'),
         ],

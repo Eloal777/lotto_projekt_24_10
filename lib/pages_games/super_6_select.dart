@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lotto_projekt_24_10/pages_games/home_page.dart';
 import 'package:lotto_projekt_24_10/pages_games/navigation_drawer.dart';
 import 'package:lotto_projekt_24_10/pages_games/super_6_result.dart';
 
@@ -14,16 +15,23 @@ class Super6SelectPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
+        leading: BackButton(
+          onPressed: () {
+            Navigator.of(context).pushReplacement(
+              MaterialPageRoute(builder: (context) => const LotteryPickerView()),
+            );
+          },
+        ),
         centerTitle: true,
         backgroundColor: const Color.fromRGBO(195, 0, 96, 1),
         title: const Text(
           'Super 6',
           style: TextStyle(
-            color: Color.fromRGBO(240, 191, 76, 1),
+            color: Color.fromRGBO(255, 255, 255, 1),
           ),
         ),
       ),
-      drawer: const AppNavigationDrawer(),
+      // drawer: const AppNavigationDrawer(),
       body: Center(
         child: ListView(
           children: [

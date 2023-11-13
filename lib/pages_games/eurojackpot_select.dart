@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lotto_projekt_24_10/pages_games/eurojackpot_result.dart';
+import 'package:lotto_projekt_24_10/pages_games/home_page.dart';
 import 'package:lotto_projekt_24_10/pages_games/navigation_drawer.dart';
 
 // final registerProvider = StateProvider<int>((ref) => 0);
@@ -14,6 +15,13 @@ class EuroJackpotSelectPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
+        leading: BackButton(
+          onPressed: () {
+            Navigator.of(context).pushReplacement(
+              MaterialPageRoute(builder: (context) => const LotteryPickerView()),
+            );
+          },
+        ),
         centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 0, 0, 0),
         title: const Text(
@@ -23,7 +31,7 @@ class EuroJackpotSelectPage extends StatelessWidget {
           ),
         ),
       ),
-      drawer: const AppNavigationDrawer(),
+      // drawer: const AppNavigationDrawer(),
       body: Center(
         child: ListView(
           children: [
