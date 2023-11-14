@@ -101,123 +101,127 @@ class _LotteryPickerViewState extends ConsumerState<LotteryPickerView> {
       drawer: const AppNavigationDrawer(),
       body:
           // screens[currentIndex],
+          ListView(
+        children: [
           Center(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 45.0),
-              child: Container(
-                alignment: Alignment.center,
-                width: 150,
-                height: 25,
-                color: const Color.fromARGB(255, 226, 224, 224),
-                child: const Center(
-                  child: Text(
-                    'Username!',
-                    style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
-                  ),
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 50,
-            ),
-            Container(
-              width: 300,
-              height: 400,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(50),
-                color: const Color.fromARGB(255, 230, 227, 227),
-              ),
-              child: Column(
-                children: [
-                  const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      'Was möchten sie \n heute Spielen?',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 45.0),
+                  child: Container(
+                    alignment: Alignment.center,
+                    width: 150,
+                    height: 25,
+                    color: const Color.fromARGB(255, 226, 224, 224),
+                    child: const Center(
+                      child: Text(
+                        'Username!',
+                        style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
+                      ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 15,
+                ),
+                const SizedBox(
+                  height: 50,
+                ),
+                Container(
+                  width: 300,
+                  height: 400,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(50),
+                    color: const Color.fromARGB(255, 230, 227, 227),
                   ),
-                  for (final lotterySystem in lotterySystemsState.lotterySystems)
-                    Padding(
-                      padding: const EdgeInsets.all(14.0),
-                      child: SizedBox(
-                        width: 150,
-                        height: 50,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: lotterySystem.gameColor,
-                          ),
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (BuildContext context) => SystemPage(
-                                  system: lotterySystem,
+                  child: Column(
+                    children: [
+                      const Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Text(
+                          'Was möchten sie \n heute Spielen?',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      for (final lotterySystem in lotterySystemsState.lotterySystems)
+                        Padding(
+                          padding: const EdgeInsets.all(14.0),
+                          child: SizedBox(
+                            width: 150,
+                            height: 50,
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: lotterySystem.gameColor,
+                              ),
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (BuildContext context) => SystemPage(
+                                      system: lotterySystem,
+                                    ),
+                                  ),
+                                );
+                                // if (lotterySystem.id == 'id1') {
+                                //   Navigator.push(
+                                //     context,
+                                //     MaterialPageRoute(
+                                //       builder: (BuildContext context) => const SelectPage6aus49(),
+                                //     ),
+                                //   );
+                                // }
+                                // if (lotterySystem.id == 'id2') {
+                                //   Navigator.push(
+                                //     context,
+                                //     MaterialPageRoute(
+                                //       builder: (BuildContext context) => const EuroJackpotSelectPage(),
+                                //     ),
+                                //   );
+                                // }
+                                // if (lotterySystem.id == 'id3') {
+                                //   Navigator.push(
+                                //     context,
+                                //     MaterialPageRoute(
+                                //       builder: (BuildContext context) => const Super6SelectPage(),
+                                //     ),
+                                //   );
+                                // }
+                                // if (lotterySystem.id == 'id4') {
+                                //   Navigator.push(
+                                //     context,
+                                //     MaterialPageRoute(
+                                //       builder: (BuildContext context) => const SelectPage77(),
+                                //     ),
+                                //   );
+                                // }
+                              },
+                              child: Text(
+                                lotterySystem.name,
+                                style: TextStyle(
+                                  letterSpacing: 1.5,
+                                  fontWeight: FontWeight.w600,
+                                  shadows: const <Shadow>[
+                                    Shadow(
+                                      offset: Offset(1.0, 1.0),
+                                      blurRadius: 2.0,
+                                      color: Color.fromARGB(255, 0, 0, 0),
+                                    ),
+                                  ],
+                                  color: lotterySystem.textColor,
                                 ),
                               ),
-                            );
-                            // if (lotterySystem.id == 'id1') {
-                            //   Navigator.push(
-                            //     context,
-                            //     MaterialPageRoute(
-                            //       builder: (BuildContext context) => const SelectPage6aus49(),
-                            //     ),
-                            //   );
-                            // }
-                            // if (lotterySystem.id == 'id2') {
-                            //   Navigator.push(
-                            //     context,
-                            //     MaterialPageRoute(
-                            //       builder: (BuildContext context) => const EuroJackpotSelectPage(),
-                            //     ),
-                            //   );
-                            // }
-                            // if (lotterySystem.id == 'id3') {
-                            //   Navigator.push(
-                            //     context,
-                            //     MaterialPageRoute(
-                            //       builder: (BuildContext context) => const Super6SelectPage(),
-                            //     ),
-                            //   );
-                            // }
-                            // if (lotterySystem.id == 'id4') {
-                            //   Navigator.push(
-                            //     context,
-                            //     MaterialPageRoute(
-                            //       builder: (BuildContext context) => const SelectPage77(),
-                            //     ),
-                            //   );
-                            // }
-                          },
-                          child: Text(
-                            lotterySystem.name,
-                            style: TextStyle(
-                              letterSpacing: 1.5,
-                              fontWeight: FontWeight.w600,
-                              shadows: const <Shadow>[
-                                Shadow(
-                                  offset: Offset(1.0, 1.0),
-                                  blurRadius: 2.0,
-                                  color: Color.fromARGB(255, 0, 0, 0),
-                                ),
-                              ],
-                              color: lotterySystem.textColor,
                             ),
                           ),
                         ),
-                      ),
-                    ),
-                ],
-              ),
+                    ],
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,

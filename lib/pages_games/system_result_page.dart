@@ -75,12 +75,17 @@ class SystemResultPage extends ConsumerWidget {
                     color: const Color.fromARGB(255, 232, 233, 235),
                     borderRadius: BorderRadiusDirectional.circular(40),
                   ),
-                  child: const Column(
+                  child: Column(
                     children: [
                       ListTile(
                         title: Center(
                           child: Text(
-                            'Ergebnisse',
+                            '''Ergebnisse\n${result.tipp()}''',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 25,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                         ),
                       ),
