@@ -44,9 +44,10 @@ class _ResultPage6aus49State extends State<ResultPage6aus49> {
                         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                       ),
                       onPressed: () {
-                        Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: (context) => const SelectPage6aus49()),
-                        );
+                        Navigator.pop(context);
+                        // Navigator.of(context).pushReplacement(
+                        //   MaterialPageRoute(builder: (context) => const SelectPage6aus49()),
+                        // );
                       },
                       child: const Text(
                         'Zurück',

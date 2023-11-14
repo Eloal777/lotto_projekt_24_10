@@ -217,7 +217,8 @@ class _LotteryPickerViewState extends ConsumerState<LotteryPickerView> {
           switch (index) {
             case 0:
               // Navigate to the Home screen
-              Navigator.of(context).pushReplacement(
+              Navigator.push(
+                context,
                 MaterialPageRoute(
                   builder: (BuildContext context) => const LotteryPickerView(),
                 ),

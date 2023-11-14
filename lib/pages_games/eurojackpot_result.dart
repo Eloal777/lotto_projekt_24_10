@@ -44,9 +44,11 @@ class _ResultPageState extends State<ResultPage> {
                         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                       ),
                       onPressed: () {
-                        Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: (context) => const EuroJackpotSelectPage()),
-                        );
+                        Navigator.pop(context);
+
+                        // Navigator.of(context).pushReplacement(
+                        //   MaterialPageRoute(builder: (context) => const EuroJackpotSelectPage()),
+                        // );
                       },
                       child: const Text(
                         'Zurück',

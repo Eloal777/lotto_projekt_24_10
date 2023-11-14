@@ -41,9 +41,10 @@ class _Super6ResultPageState extends State<Super6ResultPage> {
                         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                       ),
                       onPressed: () {
-                        Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: (context) => const Super6SelectPage()),
-                        );
+                        Navigator.pop(context);
+                        // Navigator.of(context).pushReplacement(
+                        //   MaterialPageRoute(builder: (context) => const Super6SelectPage()),
+                        // );
                       },
                       child: const Text('Zurück'),
                     ),

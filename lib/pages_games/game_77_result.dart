@@ -41,9 +41,10 @@ class _Game77ResultPageState extends State<Game77ResultPage> {
                         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                       ),
                       onPressed: () {
-                        Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: (context) => const SelectPage77()),
-                        );
+                        Navigator.pop(context);
+                        // Navigator.of(context).pushReplacement(
+                        //   MaterialPageRoute(builder: (context) => const SelectPage77()),
+                        // );
                       },
                       child: const Text('Zurück'),
                     ),
