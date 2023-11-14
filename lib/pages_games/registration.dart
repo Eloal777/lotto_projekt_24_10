@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:lotto_projekt_24_10/lotteriesystem.dart';
 
 // final registerProvider = StateProvider<int>((ref) => 0);
 
 class Registration extends StatelessWidget {
-  const Registration({super.key});
+  const Registration({required this.system, super.key});
+  final LotterySystem system;
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +13,7 @@ class Registration extends StatelessWidget {
       backgroundColor: const Color.fromARGB(255, 243, 242, 242),
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: const Color.fromRGBO(1, 100, 4, 1),
+        backgroundColor: const Color.fromRGBO(255, 0, 255, 1),
         title: const Text(
           'Registration',
         ),

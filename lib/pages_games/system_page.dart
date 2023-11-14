@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:lotto_projekt_24_10/pages_games/eurojackpot_result.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:lotto_projekt_24_10/lotteriesystem.dart';
 import 'package:lotto_projekt_24_10/pages_games/home_page.dart';
-import 'package:lotto_projekt_24_10/pages_games/navigation_drawer.dart';
+import 'package:lotto_projekt_24_10/pages_games/system_result_page.dart';
 
-// final registerProvider = StateProvider<int>((ref) => 0);
-
-class EuroJackpotSelectPage extends StatelessWidget {
-  const EuroJackpotSelectPage({
-    super.key,
-  });
-
+class SystemPage extends ConsumerWidget {
+  const SystemPage({required this.system, super.key});
+  final LotterySystem system;
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
@@ -23,11 +20,11 @@ class EuroJackpotSelectPage extends StatelessWidget {
           },
         ),
         centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 0, 0, 0),
-        title: const Text(
-          'Euro Jackpot',
+        backgroundColor: system.gameColor,
+        title: Text(
+          system.name,
           style: TextStyle(
-            color: Color.fromRGBO(240, 191, 76, 1),
+            color: system.textColor,
           ),
         ),
       ),
@@ -47,10 +44,9 @@ class EuroJackpotSelectPage extends StatelessWidget {
                   'Willkommen !',
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
                 ),
-                const Padding(
-                  padding: EdgeInsets.all(12.0),
-                  child: Text(
-                      'Hier können sie Euro Jackpot 5 aus 50\ngenerieren lassen indem sie \nZufallszahlen, Geburtstagszahlen \noder Lieblingszahlen auswählen.'),
+                Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Text(system.gameDescription),
                 ),
                 Container(
                   margin: const EdgeInsets.only(top: 60.0, bottom: 60),
@@ -69,20 +65,24 @@ class EuroJackpotSelectPage extends StatelessWidget {
                           padding: const EdgeInsets.all(12.0),
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+                              backgroundColor: system.gameColor,
                               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                               textStyle:
                                   const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
                             ),
                             onPressed: () {
                               Navigator.of(context).pushReplacement(
-                                MaterialPageRoute(builder: (context) => const ResultPage()),
+                                MaterialPageRoute(
+                                  builder: (context) => SystemResultPage(
+                                    result: system,
+                                  ),
+                                ),
                               );
                             },
-                            child: const Text(
+                            child: Text(
                               'Zufallszahlen',
                               style: TextStyle(
-                                color: Color.fromRGBO(240, 191, 76, 1),
+                                color: system.textColor,
                               ),
                             ),
                           ),
@@ -94,20 +94,23 @@ class EuroJackpotSelectPage extends StatelessWidget {
                           padding: const EdgeInsets.all(12.0),
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+                              backgroundColor: system.gameColor,
                               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                               textStyle:
                                   const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
                             ),
                             onPressed: () {
                               Navigator.of(context).pushReplacement(
-                                MaterialPageRoute(builder: (context) => const ResultPage()),
+                                MaterialPageRoute(
+                                    builder: (context) => SystemResultPage(
+                                          result: system,
+                                        )),
                               );
                             },
-                            child: const Text(
+                            child: Text(
                               'Lieblingszahlen',
                               style: TextStyle(
-                                color: Color.fromRGBO(240, 191, 76, 1),
+                                color: system.textColor,
                               ),
                             ),
                           ),
@@ -119,20 +122,24 @@ class EuroJackpotSelectPage extends StatelessWidget {
                           padding: const EdgeInsets.all(12.0),
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+                              backgroundColor: system.gameColor,
                               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                               textStyle:
                                   const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
                             ),
                             onPressed: () {
                               Navigator.of(context).pushReplacement(
-                                MaterialPageRoute(builder: (context) => const ResultPage()),
+                                MaterialPageRoute(
+                                  builder: (context) => SystemResultPage(
+                                    result: system,
+                                  ),
+                                ),
                               );
                             },
-                            child: const Text(
+                            child: Text(
                               'Geburtstagtagszahlen',
                               style: TextStyle(
-                                color: Color.fromRGBO(240, 191, 76, 1),
+                                color: system.textColor,
                               ),
                             ),
                           ),

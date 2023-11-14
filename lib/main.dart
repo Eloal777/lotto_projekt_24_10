@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:lotto_projekt_24_10/pages_games/home_page.dart';
-import 'package:lotto_projekt_24_10/pages_games/lotto_6_aus_49_select_page.dart';
+import 'package:lotto_projekt_24_10/pages_games/settings.dart';
 
 //Noch ein schöner Provider ist StateNotifier und StateNotifierProvider
 //Sie sind Ideal zum Statemanagement die mit User Interaktion zutun haben
@@ -35,7 +34,7 @@ class MyApp extends ConsumerWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Riverpod',
-      home: LotteryPickerView(),
+      home: Settings(),
       // initialRoute: '/Welcomeonce',
       // routes: {
       //   '$WelcomeOnce()': (context) => const WelcomeOnce(),

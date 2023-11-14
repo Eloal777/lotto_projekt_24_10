@@ -15,6 +15,7 @@ class LotterieSystemsState {
 class LotterySystem {
   final String id;
   final String name;
+  final String gameDescription;
   final List<LotteryDraw> draws;
   final String iconPath;
   final Color gameColor;
@@ -23,6 +24,7 @@ class LotterySystem {
   LotterySystem(
       {required this.id,
       required this.name,
+      required this.gameDescription,
       required this.draws,
       required this.iconPath,
       required this.gameColor,

@@ -1,22 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:lotto_projekt_24_10/pages_games/navigation_drawer.dart';
+import 'package:lotto_projekt_24_10/pages_games/home_page.dart';
 
 // final registerProvider = StateProvider<int>((ref) => 0);
 
-class SettingsDesignLoggedIn extends StatefulWidget {
-  const SettingsDesignLoggedIn({super.key});
+class Settings extends StatefulWidget {
+  const Settings({super.key});
 
   @override
-  State<SettingsDesignLoggedIn> createState() => _SettingsDesignLoggedInState();
+  State<Settings> createState() => _SettingsState();
 }
 
-class _SettingsDesignLoggedInState extends State<SettingsDesignLoggedIn> {
+class _SettingsState extends State<Settings> {
   bool light = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 243, 242, 242),
       appBar: AppBar(
+        leading: BackButton(
+          onPressed: () {
+            Navigator.of(context).pushReplacement(
+              MaterialPageRoute(builder: (context) => const LotteryPickerView()),
+            );
+          },
+        ),
         centerTitle: true,
         backgroundColor: const Color.fromRGBO(1, 100, 4, 1),
         title: const Text(
@@ -33,11 +40,26 @@ class _SettingsDesignLoggedInState extends State<SettingsDesignLoggedIn> {
                   children: [
                     const SizedBox(height: 15),
                     const Padding(
-                        padding: EdgeInsets.only(top: 12.0, right: 24, left: 24, bottom: 6),
-                        child: Text(
-                          'NickName',
-                          style: TextStyle(fontWeight: FontWeight.w600),
-                        )),
+                      padding: EdgeInsets.only(top: 12.0, right: 24, left: 24, bottom: 6),
+                      child: Text(
+                        'NickName',
+                        style: TextStyle(fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 12.0, right: 24, left: 24, bottom: 6),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          prefixIcon: const Icon(Icons.person_outline),
+                          filled: true,
+                          fillColor: Colors.grey.shade300,
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(24.0),
+                          ),
+                          hintText: 'Nickname:',
+                        ),
+                      ),
+                    ),
                     Padding(
                       padding: const EdgeInsets.only(top: 12.0, right: 24, left: 24, bottom: 6),
                       child: TextField(

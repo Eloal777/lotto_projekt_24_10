@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lotto_projekt_24_10/pages_games/home_page.dart';
-import 'package:lotto_projekt_24_10/pages_games/settings_login_sucess.dart';
+import 'package:lotto_projekt_24_10/pages_games/settings.dart';
 
 class AppNavigationDrawer extends StatelessWidget {
   const AppNavigationDrawer({super.key});
@@ -56,7 +56,7 @@ class NavigationDrawer extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).pushReplacement(
                   MaterialPageRoute(
-                    builder: (context) => const SettingsDesignLoggedIn(),
+                    builder: (context) => const Settings(),
                   ),
                 );
               },

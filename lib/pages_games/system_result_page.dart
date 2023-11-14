@@ -1,28 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:lotto_projekt_24_10/pages_games/lotto_6_aus_49_select_page.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:lotto_projekt_24_10/lotteriesystem.dart';
 import 'package:lotto_projekt_24_10/pages_games/navigation_drawer.dart';
 
-// final registerProvider = StateProvider<int>((ref) => 0);
-
-class ResultPage6aus49 extends StatefulWidget {
-  const ResultPage6aus49({super.key});
+class SystemResultPage extends ConsumerWidget {
+  const SystemResultPage({required this.result, super.key});
+  final LotterySystem result;
 
   @override
-  State<ResultPage6aus49> createState() => _ResultPage6aus49State();
-}
-
-class _ResultPage6aus49State extends State<ResultPage6aus49> {
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: const Color.fromRGBO(252, 220, 23, 1),
-        title: const Text(
-          'Lotto 6 aus 49',
+        backgroundColor: result.gameColor,
+        title: Text(
+          result.name,
           style: TextStyle(
-            color: Color.fromARGB(255, 243, 18, 2),
+            color: result.textColor,
           ),
         ),
       ),
@@ -40,32 +35,33 @@ class _ResultPage6aus49State extends State<ResultPage6aus49> {
                   children: [
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color.fromRGBO(252, 220, 23, 1),
+                        backgroundColor: result.gameColor,
                         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                       ),
                       onPressed: () {
                         Navigator.pop(context);
+
                         // Navigator.of(context).pushReplacement(
-                        //   MaterialPageRoute(builder: (context) => const SelectPage6aus49()),
+                        //   MaterialPageRoute(builder: (context) => const EuroJackpotSelectPage()),
                         // );
                       },
-                      child: const Text(
+                      child: Text(
                         'Zurück',
                         style: TextStyle(
-                          color: Color.fromARGB(255, 243, 18, 2),
+                          color: result.textColor,
                         ),
                       ),
                     ),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color.fromRGBO(252, 220, 23, 1),
+                        backgroundColor: result.gameColor,
                         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                       ),
                       onPressed: () {},
-                      child: const Text(
+                      child: Text(
                         'Speichern',
                         style: TextStyle(
-                          color: Color.fromARGB(255, 243, 18, 2),
+                          color: result.textColor,
                         ),
                       ),
                     ),
