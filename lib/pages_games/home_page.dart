@@ -147,9 +147,9 @@ class _LotteryPickerViewState extends ConsumerState<LotteryPickerView> {
                       ),
                       for (final lotterySystem in lotterySystemsState.lotterySystems)
                         Padding(
-                          padding: const EdgeInsets.all(14.0),
+                          padding: const EdgeInsets.all(12.0),
                           child: SizedBox(
-                            width: 150,
+                            width: 200,
                             height: 50,
                             child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
