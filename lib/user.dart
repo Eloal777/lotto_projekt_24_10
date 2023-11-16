@@ -7,52 +7,46 @@ import 'package:flutter/material.dart';
 @immutable
 class User {
   final String name;
-  final String password;
   final DateTime birth;
-  final bool isRegiastrated;
-  final String email;
+  final String language;
+  final bool darkMode;
 
   const User({
     required this.name,
-    required this.password,
     required this.birth,
-    isRegiastrated,
-    required this.email,
-  }) : isRegiastrated = false;
+    required this.language,
+    required this.darkMode,
+  });
 
   User copyWith({
     String? name,
-    String? password,
     DateTime? birth,
-    bool? isRegiastrated,
-    String? email,
+    String? language,
+    bool? darkMode,
   }) {
     return User(
       name: name ?? this.name,
-      password: password ?? this.password,
       birth: birth ?? this.birth,
-      isRegiastrated: isRegiastrated ?? this.isRegiastrated,
-      email: email ?? this.email,
+      language: language ?? this.language,
+      darkMode: darkMode ?? this.darkMode,
     );
   }
 
   Map<String, dynamic> toMap() {
     return {
       'name': name,
-      'password': password,
       'birth': birth.millisecondsSinceEpoch,
-      'isRegiastrated': isRegiastrated,
-      'email': email,
+      'language': language,
+      'darkMode': darkMode,
     };
   }
 
   factory User.fromMap(Map<String, dynamic> map) {
     return User(
       name: map['name'] ?? '',
-      password: map['password'] ?? '',
       birth: DateTime.fromMillisecondsSinceEpoch(map['birth']),
-      isRegiastrated: map['isRegiastrated'] ?? false,
-      email: map['email'] ?? '',
+      language: map['language'] ?? '',
+      darkMode: map['darkMode'] ?? false,
     );
   }
 
@@ -62,7 +56,7 @@ class User {
 
   @override
   String toString() {
-    return 'User(name: $name, password: $password, birth: $birth, isRegiastrated: $isRegiastrated, email: $email)';
+    return 'User(name: $name, birth: $birth, language: $language, darkMode: $darkMode)';
   }
 
   @override
@@ -71,14 +65,13 @@ class User {
 
     return other is User &&
         other.name == name &&
-        other.password == password &&
         other.birth == birth &&
-        other.isRegiastrated == isRegiastrated &&
-        other.email == email;
+        other.language == language &&
+        other.darkMode == darkMode;
   }
 
   @override
   int get hashCode {
-    return name.hashCode ^ password.hashCode ^ birth.hashCode ^ isRegiastrated.hashCode ^ email.hashCode;
+    return name.hashCode ^ birth.hashCode ^ language.hashCode ^ darkMode.hashCode;
   }
 }
