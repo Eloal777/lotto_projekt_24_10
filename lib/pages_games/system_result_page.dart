@@ -82,7 +82,7 @@ class SystemResultPage extends ConsumerWidget {
                           child: Text(
                             '''Ergebnisse\n${result.tipp()}''',
                             textAlign: TextAlign.center,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 25,
                               fontWeight: FontWeight.w500,
                             ),
