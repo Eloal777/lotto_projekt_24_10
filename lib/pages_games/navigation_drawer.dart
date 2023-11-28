@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lotto_projekt_24_10/pages_games/app_info_page.dart';
 import 'package:lotto_projekt_24_10/pages_games/home_page.dart';
 import 'package:lotto_projekt_24_10/pages_games/settings.dart';
 
@@ -67,7 +68,13 @@ class NavigationDrawer extends StatelessWidget {
             ListTile(
               leading: const Icon(Icons.info),
               title: const Text('Info'),
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (context) => const InfoPage(),
+                  ),
+                );
+              },
             ),
             const Divider(
               color: Colors.black54,

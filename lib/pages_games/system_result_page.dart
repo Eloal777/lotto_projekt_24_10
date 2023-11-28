@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:lotto_projekt_24_10/lotteriesystem.dart';
+import 'package:lotto_projekt_24_10/models/lottery_system.dart';
 import 'package:lotto_projekt_24_10/pages_games/navigation_drawer.dart';
 
 class SystemResultPage extends ConsumerWidget {

@@ -64,20 +64,6 @@ class _SettingsState extends State<Settings> {
                       padding: const EdgeInsets.only(top: 12.0, right: 24, left: 24, bottom: 6),
                       child: TextField(
                         decoration: InputDecoration(
-                          prefixIcon: const Icon(Icons.person_outline),
-                          filled: true,
-                          fillColor: Colors.grey.shade300,
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(24.0),
-                          ),
-                          hintText: 'Geburtsdatum:',
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 12.0, right: 24, left: 24, bottom: 6),
-                      child: TextField(
-                        decoration: InputDecoration(
                           prefixIcon: const Icon(Icons.language_outlined),
                           filled: true,
                           fillColor: Colors.grey.shade300,
