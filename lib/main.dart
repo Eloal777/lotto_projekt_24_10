@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:lotto_projekt_24_10/user.dart';
+import 'package:lotto_projekt_24_10/theme/theme.dart'; 
+import 'package:lotto_projekt_24_10/theme/theme_provider.dart';
 import 'home_page.dart';
 
 //Noch ein schöner Provider ist StateNotifier und StateNotifierProvider
@@ -35,6 +37,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'Flutter Riverpod',
       home: MyHomePage(),
+      theme: ref.watch(themeProvider),
     );
   }
 }
