@@ -26,22 +26,22 @@ void main() {
   runApp(const ProviderScope(child: MyApp()));
 }
 
+///This is my App Class that do extend the Consumerwidget from Riverpod
 class MyApp extends ConsumerWidget {
+  ///The Constructor of the MyApp Class
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Riverpod',
-      home: LotteryPickerView(),
-      // initialRoute: '/Welcomeonce',
-      // routes: {
-      //   '$WelcomeOnce()': (context) => const WelcomeOnce(),
-      //   '$SelectPage6aus49': (context) => const SelectPage6aus49(),
-      // },
+  Widget build(BuildContext context, WidgetRef ref) => const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Riverpod',
+        home: LotteryPickerView(),
+        // initialRoute: '/Welcomeonce',
+        // routes: {
+        //   '$WelcomeOnce()': (context) => const WelcomeOnce(),
+        //   '$SelectPage6aus49': (context) => const SelectPage6aus49(),
+        // },
 
-      // WelcomeOnce , MyHomePage , ResultPage
-    );
-  }
+        // WelcomeOnce , MyHomePage , ResultPage
+      );
 }

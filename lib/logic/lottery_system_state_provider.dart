@@ -4,11 +4,14 @@ import 'package:lotto_projekt_24_10/models/lottery_draw.dart';
 import 'package:lotto_projekt_24_10/models/lottery_system.dart';
 import 'package:lotto_projekt_24_10/models/lottery_system_state.dart';
 import 'package:lotto_projekt_24_10/models/lottery_tip.dart';
+import 'package:lotto_projekt_24_10/user.dart';
 
+///A Variable that saves the State of this file
 final lotterySystemsProvider = NotifierProvider<LotterySystemsStateProvider, LotterySystemsState>(
   () => LotterySystemsStateProvider(),
 );
 
+/// The Provider extends a notifier of the Lotterysystemstate
 class LotterySystemsStateProvider extends Notifier<LotterySystemsState> {
   @override
   LotterySystemsState build() => LotterySystemsState(
@@ -85,11 +88,13 @@ class LotterySystemsStateProvider extends Notifier<LotterySystemsState> {
         ],
       );
 
+  ///This Function deletes a Tip of Numbers of a selected game from the app
   void deleteTippsOfSystem(LotterySystem system) {
     final newList = state.lotteryTips.where((tipp) => system.id != tipp.gameId).toList();
     state = state.copyWith(lotteryTips: newList);
   }
 
+  ///This Function adds a generated Numbers to a selected game the new Tipps are up and the old are down
   void addTippsToSystem(LotterySystem system) {
     final newTipp = system.tipp();
     final newTippObject = LotteryTip(gameId: system.id, tipp: newTipp);
@@ -100,5 +105,16 @@ class LotterySystemsStateProvider extends Notifier<LotterySystemsState> {
     // }
     // newTippsList.add(newTippObject);
     state = state.copyWith(lotteryTips: newTippsList);
+  }
+
+  void addUser({required String name, required String language, DateTime? birth, bool darkmoder = false}) {
+    state = state.copyWith(
+      newUser: User(
+        name: name,
+        birth: birth,
+        language: language,
+        darkMode: darkmoder,
+      ),
+    );
   }
 }
