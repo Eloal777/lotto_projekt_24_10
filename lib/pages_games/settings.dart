@@ -1,7 +1,6 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:lotto_projekt_24_10/generated/l10n.dart';
 import 'package:lotto_projekt_24_10/logic/lottery_system_state_provider.dart';
 import 'package:lotto_projekt_24_10/pages_games/home_page.dart';
 import 'package:lotto_projekt_24_10/user.dart';
@@ -38,9 +37,9 @@ class _SettingsState extends ConsumerState<Settings> {
         ),
         centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 6, 133, 207),
-        title: const Text(
-          'Einstellungen',
-          style: TextStyle(color: Colors.white),
+        title: Text(
+          S.of(context).einstellungen,
+          style: const TextStyle(color: Colors.white),
         ),
       ),
       // drawer: const AppNavigationDrawer(),
@@ -58,11 +57,11 @@ class _SettingsState extends ConsumerState<Settings> {
                   Column(
                     children: [
                       const SizedBox(height: 15),
-                      const Padding(
-                        padding: EdgeInsets.only(top: 12.0, right: 24, left: 24, bottom: 6),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 12.0, right: 24, left: 24, bottom: 6),
                         child: Text(
-                          'Spielername',
-                          style: TextStyle(fontWeight: FontWeight.w600),
+                          S.of(context).spielername,
+                          style: const TextStyle(fontWeight: FontWeight.w600),
                         ),
                       ),
                       Padding(
@@ -74,11 +73,11 @@ class _SettingsState extends ConsumerState<Settings> {
                           decoration: InputDecoration(
                             prefixIcon: const Icon(Icons.person_outline),
                             filled: true,
-                            fillColor: Colors.grey.shade300,
+                            fillColor: Colors.white,
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(24.0),
                             ),
-                            hintText: 'Nickname:',
+                            hintText: S.of(context).nickname,
                           ),
                         ),
                       ),
@@ -89,45 +88,30 @@ class _SettingsState extends ConsumerState<Settings> {
                           decoration: InputDecoration(
                             prefixIcon: const Icon(Icons.language_outlined),
                             filled: true,
-                            fillColor: Colors.grey.shade300,
+                            fillColor: Colors.white,
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(24.0),
                             ),
-                            hintText: 'Sprache:',
+                            hintText: S.of(context).sprache,
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 42.0, right: 24, bottom: 6),
-                        child: Container(
-                          margin: const EdgeInsets.only(left: 25),
-                          decoration: BoxDecoration(
-                            color: Colors.grey.shade300,
-                            border: Border.all(),
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              const Icon(Icons.dark_mode_outlined),
-                              const Text(
-                                'Dark mode:',
-                                style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
-                              ),
-                              Switch(
-                                activeColor: const Color.fromRGBO(32, 70, 12, 1),
-                                value: light,
-                                onChanged: (newValue) {
-                                  setState(() {
-                                    light = newValue;
-                                  });
-                                },
-                              ),
-                            ],
-                          ),
+                      Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(S.of(context).hello),
+                            Text(S.of(context).goodbye),
+                          ],
                         ),
                       ),
-                      TextButton(
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+                          ),
                           onPressed: () {
                             final newUser = User(
                               name: nameControlle.text,
@@ -135,10 +119,12 @@ class _SettingsState extends ConsumerState<Settings> {
                               language: 'language',
                               darkMode: false,
                             );
-
                             provider.addUser(name: nameControlle.text, birth: DateTime(1985), language: 'Deutsch');
                           },
-                          child: const Text('submit')),
+                          child: Text(
+                            S.of(context).speichern,
+                            style: const TextStyle(color: Colors.white),
+                          )),
                       const SizedBox(
                         height: 12,
                       ),
@@ -150,7 +136,7 @@ class _SettingsState extends ConsumerState<Settings> {
                 margin: const EdgeInsets.all(25),
                 height: 250,
                 width: 100,
-                color: Colors.grey.shade400,
+                color: Colors.white,
                 child: const Text(
                   'Werbung',
                   textAlign: TextAlign.center,

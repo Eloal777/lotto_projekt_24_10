@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:lotto_projekt_24_10/generated/l10n.dart';
 import 'package:lotto_projekt_24_10/logic/lottery_system_state_provider.dart';
 import 'package:lotto_projekt_24_10/pages_games/navigation_drawer.dart';
 import 'package:lotto_projekt_24_10/pages_games/settings.dart';
@@ -31,9 +32,9 @@ class _LotteryPickerViewState extends ConsumerState<LotteryPickerView> {
         iconTheme: const IconThemeData(color: Colors.white),
         centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 6, 133, 207),
-        title: const Text(
-          'Lotto Generator',
-          style: TextStyle(color: Colors.white),
+        title: Text(
+          S.of(context).lottoGenerator,
+          style: const TextStyle(color: Colors.white),
         ),
       ),
       drawer: const AppNavigationDrawer(),
@@ -55,11 +56,13 @@ class _LotteryPickerViewState extends ConsumerState<LotteryPickerView> {
                     child: Container(
                       width: 250,
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(40), color: const Color.fromARGB(101, 43, 68, 138)),
+                        borderRadius: BorderRadius.circular(40),
+                        color: const Color.fromARGB(101, 43, 68, 138),
+                      ),
                       alignment: Alignment.center,
                       child: Center(
                         child: Text(
-                          lotterySystemsState.user?.name ?? 'Herzlich Willkommen!',
+                          lotterySystemsState.user?.name ?? S.of(context).herzlichWillkommen,
                           style: const TextStyle(
                             color: Color.fromARGB(255, 255, 255, 255),
                             fontSize: 20,
@@ -81,12 +84,12 @@ class _LotteryPickerViewState extends ConsumerState<LotteryPickerView> {
                     ),
                     child: Column(
                       children: [
-                        const Padding(
-                          padding: EdgeInsets.all(8.0),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
                           child: Text(
-                            'Was möchten sie \n heute Spielen?',
+                            S.of(context).wasMchtenSieNHeuteSpielen,
                             textAlign: TextAlign.center,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Color.fromARGB(255, 255, 255, 255),
                               fontSize: 20,
                             ),

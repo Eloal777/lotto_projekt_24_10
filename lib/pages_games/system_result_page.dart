@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:lotto_projekt_24_10/generated/l10n.dart';
 import 'package:lotto_projekt_24_10/models/lottery_system.dart';
 import 'package:lotto_projekt_24_10/pages_games/navigation_drawer.dart';
 
@@ -49,7 +50,7 @@ class SystemResultPage extends ConsumerWidget {
                           // );
                         },
                         child: Text(
-                          'Zurück',
+                          S.of(context).zurck,
                           style: TextStyle(
                             color: result.textColor,
                           ),
@@ -62,7 +63,7 @@ class SystemResultPage extends ConsumerWidget {
                         ),
                         onPressed: () {},
                         child: Text(
-                          'Speichern',
+                          S.of(context).speichern,
                           style: TextStyle(
                             color: result.textColor,
                           ),
@@ -83,7 +84,8 @@ class SystemResultPage extends ConsumerWidget {
                         ListTile(
                           title: Center(
                             child: Text(
-                              '''Ergebnisse\n${result.tipp()}''',
+                              // '''Ergebnisse\n ${result.tipp()}''',
+                              S.of(context).ergebnissenResult(result),
                               textAlign: TextAlign.center,
                               style: const TextStyle(
                                 fontSize: 25,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:lotto_projekt_24_10/generated/l10n.dart';
 import 'package:lotto_projekt_24_10/models/lottery_system.dart';
 import 'package:lotto_projekt_24_10/models/lottery_tip.dart';
 import 'package:lotto_projekt_24_10/pages_games/home_page.dart';
@@ -68,9 +69,9 @@ class SystemPage extends ConsumerWidget {
               const SizedBox(
                 height: 15,
               ),
-              const Text(
-                'Willkommen !',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
+              Text(
+                S.of(context).willkommen,
+                style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
               ),
               Padding(
                 padding: const EdgeInsets.all(12.0),
@@ -89,7 +90,7 @@ class SystemPage extends ConsumerWidget {
                         stateProvider.deleteTippsOfSystem(system);
                       },
                       child: Text(
-                        'Liste leeren',
+                        S.of(context).listeLeeren,
                         style: TextStyle(
                           color: system.textColor,
                         ),
@@ -104,7 +105,7 @@ class SystemPage extends ConsumerWidget {
                         stateProvider.addTippsToSystem(system);
                       },
                       child: Text(
-                        '+1 Tipp',
+                        S.of(context).plus1tipp,
                         style: TextStyle(
                           color: system.textColor,
                           fontSize: 15,

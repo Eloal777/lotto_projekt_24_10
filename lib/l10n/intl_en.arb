@@ -1,0 +1,21 @@
+{
+  "hello": "Hello",
+  "goodbye": "Goodbye",
+  "inDieserAppKnnenSieSichZahlenGenerierenLassenFr": "''In this app you can have numbers generated for different games,\nFirst game is Lotto 6 out of 49, second game is Euro Jackpot,\r\nthird game is Super 6,\nand the fourth game is game 77.\n This is just a random number generator. It does NOT guarantee you a win in any lottery, it just helps you choose numbers to play\n\r\n if you have no idea which ones you should play.\n\nAppVersion 1.0. 0''",
+  "lottoziehung": "Lottery drawing",
+  "information": "Information",
+  "lotto6Aus49": "Lottery 6 from 49",
+  "lottoGenerator": "Lottery Generator",
+  "herzlichWillkommen": "Welcome!",
+  "wasMchtenSieNHeuteSpielen": "What would you like to play today?",
+  "zurck": "Back",
+  "speichern": "Save",
+  "ergebnissenResult": "Results\\n {result}",
+  "einstellungen": "Settings",
+  "spielername": "Name",
+  "nickname": "Nickname:",
+  "sprache": "Language:",
+  "willkommen": "Welcome!",
+  "listeLeeren": "Clear list",
+  "plus1tipp": "+1 Row"
+}

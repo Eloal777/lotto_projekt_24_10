@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:lotto_projekt_24_10/generated/l10n.dart';
 import 'package:lotto_projekt_24_10/pages_games/home_page.dart';
 
 //Noch ein schöner Provider ist StateNotifier und StateNotifierProvider
@@ -32,10 +34,18 @@ class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) => const MaterialApp(
+  Widget build(BuildContext context, WidgetRef ref) => MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Riverpod',
-        home: LotteryPickerView(),
+        localizationsDelegates: const [
+          S.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: S.delegate.supportedLocales,
+
+        home: const LotteryPickerView(),
         // initialRoute: '/Welcomeonce',
         // routes: {
         //   '$WelcomeOnce()': (context) => const WelcomeOnce(),
