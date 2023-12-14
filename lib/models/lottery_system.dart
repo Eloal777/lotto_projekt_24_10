@@ -33,7 +33,9 @@ class LotterySystem {
   LotterySystem({
     required this.id,
     required this.name,
-    required this.gameDescription,
+    required this.gameDescriptionDe,
+    required this.gameDescriptionRu,
+    required this.gameDescriptionEn,
     required this.draws,
     required this.iconPath,
     required this.gameColor,
