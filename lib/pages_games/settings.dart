@@ -61,6 +61,27 @@ class _SettingsState extends ConsumerState<Settings> {
             children: [
               Column(
                 children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 12.0, right: 24, left: 320, bottom: 6),
+                    child: DropdownButton(
+                      icon: const Icon(
+                        Icons.language_rounded,
+                        color: Colors.blue,
+                      ),
+                      iconSize: 30,
+                      value: dropdownValue,
+                      items: languages
+                          .map<DropdownMenuItem<ITranslation>>((value) => DropdownMenuItem<ITranslation>(
+                                value: value,
+                                child: Text(value.languageCode),
+                              ))
+                          .toList(),
+                      onChanged: (value) {
+                        // This is called when the user selects an item.
+                        provider.changeTranslation(translation: value!);
+                      },
+                    ),
+                  ),
                   Column(
                     children: [
                       const SizedBox(height: 15),
@@ -86,30 +107,6 @@ class _SettingsState extends ConsumerState<Settings> {
                             ),
                             hintText: translation.nickname,
                           ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 12.0, right: 24, left: 24, bottom: 6),
-                        child: DropdownButton(
-                          value: dropdownValue,
-                          items: languages
-                              .map<DropdownMenuItem<ITranslation>>((value) => DropdownMenuItem<ITranslation>(
-                                    value: value,
-                                    child: Text(value.languageCode),
-                                  ))
-                              .toList(),
-                          onChanged: (value) {
-                            // This is called when the user selects an item.
-                            provider.changeTranslation(translation: value!);
-                          },
-                        ),
-                      ),
-                      Center(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(translation.goodbye),
-                          ],
                         ),
                       ),
                       const SizedBox(
