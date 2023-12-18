@@ -12,7 +12,9 @@ class LotterySystem {
   final String name;
 
   ///This Variable saves the Description of the Game, means This game rules...
-  final String gameDescription;
+  final String gameDescriptionDe;
+  final String gameDescriptionRu;
+  final String gameDescriptionEn;
 
   ///This Variable saves how often it needs to draw numbers that the game is ready
   final List<LotteryDraw> draws;

@@ -30,7 +30,7 @@ class LotterySystemsStateProvider extends Notifier<LotterySystemsState> {
             id: 'id1',
             name: 'Lotto 6 aus 49',
             superNumbers: 1,
-            gameDescription: 'Lassen sie sich Zahlen Generieren die ihnen vielleicht zum großem Glück verhelfen.',
+            gameDescriptionDe: 'Lassen sie sich Zahlen Generieren die ihnen vielleicht zum großem Glück verhelfen.',
             draws: [
               LotteryDraw(min: 1, max: 49, draws: 6, sorted: true),
               LotteryDraw(min: 0, max: 9, draws: 1),
@@ -43,7 +43,7 @@ class LotterySystemsStateProvider extends Notifier<LotterySystemsState> {
             id: 'id2',
             name: 'Euro Jackpot',
             superNumbers: 2,
-            gameDescription: 'Lassen sie sich Zahlen Generieren die ihnen vielleicht zum großem Glück verhelfen.',
+            gameDescriptionDe: 'Lassen sie sich Zahlen Generieren die ihnen vielleicht zum großem Glück verhelfen.',
             draws: [
               LotteryDraw(min: 1, max: 50, draws: 5, sorted: true),
               LotteryDraw(min: 1, max: 12, draws: 2, sorted: true),
@@ -56,7 +56,7 @@ class LotterySystemsStateProvider extends Notifier<LotterySystemsState> {
               id: 'id3',
               name: 'Lotto Super 6',
               superNumbers: 0,
-              gameDescription: 'Lassen sie sich Zahlen für ihren Schein generieren um bei Super 6 teilzunehmen.',
+              gameDescriptionDe: 'Lassen sie sich Zahlen für ihren Schein generieren um bei Super 6 teilzunehmen.',
               draws: [
                 LotteryDraw(min: 0, max: 9, draws: 1),
                 LotteryDraw(min: 0, max: 9, draws: 1),
@@ -72,7 +72,7 @@ class LotterySystemsStateProvider extends Notifier<LotterySystemsState> {
               id: 'id4',
               name: 'Spiel 77',
               superNumbers: 0,
-              gameDescription: 'Lassen sie sich Zahlen für ihren Schein generieren um bei Spiel 77 teilzunehmen.',
+              gameDescriptionDe: 'Lassen sie sich Zahlen für ihren Schein generieren um bei Spiel 77 teilzunehmen.',
               draws: [
                 LotteryDraw(min: 0, max: 9, draws: 1),
                 LotteryDraw(min: 0, max: 9, draws: 1),
