@@ -27,4 +27,7 @@ abstract class ITranslation {
   String get willkommen;
   String get listeLeeren;
   String get plus1tipp;
+  String get gameDescription;
+  String get gameDescriptions6;
+  String get gameDescriptions77;
 }

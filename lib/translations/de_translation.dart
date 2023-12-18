@@ -12,18 +12,18 @@ class DeTranslation implements ITranslation {
   @override
   String get subTitleHome => 'Lotto Generator';
   @override
-  String get subTitleSettings => 'Лоттогенератор - Настройки';
+  String get subTitleSettings => 'Lotto Generator - Einstellungen';
   @override
-  String get darkModeSwitchDescription => 'Тёмный Модус вкл/выкл';
+  String get darkModeSwitchDescription => 'Blackmode ein/aus';
   @override
-  String get appThemeSwitchDescription => 'Изменить тему';
+  String get appThemeSwitchDescription => 'Theme wechseln';
   @override
-  String get greetings => 'Привет';
+  String get greetings => 'Hallo';
   @override
-  String get goodbye => 'Пока';
+  String get goodbye => 'Auf Wiedersehen';
   @override
   String get inDieserAppKnnenSieSichZahlenGenerierenLassenFr =>
-      'In dieser App können sie sich Zahlen Generieren lassen für verschiedene Spiele,\nErstes Spiel ist Lotto 6 aus 49, zweites Spiel ist Euro Jackpot,\r\ndrittes Spiel ist Super 6,\nund das vierte Spiel ist Spiel 77.\n Das ist nur ein Zufallszahlengenerator er Garantiert ihnen NICHT einen Gewinn bei irgendeiner Lotterie, er hilft ihnen nur Zahlen zum Spielen auszuwählen\n\r\n falls sie selbst keine Idee haben welche sie spielen sollten.\n\nAppVersion 1.0.0';
+      'In dieser App können sie sich Zahlen Generieren lassen für verschiedene Spiele,\nErstes Spiel ist Lotto 6 aus 49, zweites Spiel ist Euro Jackpot,\r\ndrittes Spiel ist Super 6,\nund das vierte Spiel ist Spiel 77.\n Das ist nur ein Zufallszahlengenerator er Garantiert ihnen keinen Gewinn bei irgendeiner Lotterie, er hilft ihnen nur Zahlen zum Spielen auszuwählen\n\r falls sie selbst keine Idee haben welche sie spielen sollten.\n\nAppVersion 1.0.0';
 
   @override
   String get lottoziehung => 'Lottoziehung';
@@ -53,7 +53,7 @@ class DeTranslation implements ITranslation {
   @override
   String get spielername => 'Spielername';
   @override
-  String get nickname => 'НNickname';
+  String get nickname => 'Nickname';
   @override
   String get sprache => 'Sprache:';
   @override
@@ -62,4 +62,10 @@ class DeTranslation implements ITranslation {
   String get listeLeeren => 'Liste leeren';
   @override
   String get plus1tipp => '+1 Reihe';
+  @override
+  String get gameDescription => 'Lassen sie sich Zahlen Generieren die ihnen vielleicht zum großem Glück verhelfen.';
+  @override
+  String get gameDescriptions6 => 'Lassen sie sich Zahlen für ihren Schein generieren um bei Super 6 teilzunehmen.';
+  @override
+  String get gameDescriptions77 => 'Lassen sie sich Zahlen für ihren Schein generieren um bei Spiel 77 teilzunehmen.';
 }

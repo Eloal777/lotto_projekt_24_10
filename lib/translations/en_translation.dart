@@ -6,17 +6,17 @@ class EnTranslation implements ITranslation {
   @override
   String get languageCode => 'EN';
   @override
-  String get titleHome => 'Генератор Цифер';
+  String get titleHome => 'Numbers Generator';
   @override
-  String get titleSettings => 'Настройки';
+  String get titleSettings => 'Settings';
   @override
-  String get subTitleHome => 'Лоттогенератор';
+  String get subTitleHome => 'Lottogenerator';
   @override
-  String get subTitleSettings => 'Лоттогенератор - Настройки';
+  String get subTitleSettings => 'Lottogenerator - Einstellungen';
   @override
-  String get darkModeSwitchDescription => 'Тёмный Модус вкл/выкл';
+  String get darkModeSwitchDescription => 'Blackmode on/off';
   @override
-  String get appThemeSwitchDescription => 'Изменить тему';
+  String get appThemeSwitchDescription => 'Change Theme';
   @override
   String get greetings => 'Hello';
   @override
@@ -61,4 +61,10 @@ class EnTranslation implements ITranslation {
   String get listeLeeren => 'Clear List';
   @override
   String get plus1tipp => '+1 Row';
+  @override
+  String get gameDescription => 'Let us generate numbers that maybe might help you achieve great luck.';
+  @override
+  String get gameDescriptions6 => 'Have numbers generated for your ticket to take part in Super 6.';
+  @override
+  String get gameDescriptions77 => 'Have numbers generated for your ticket to take part in Game 77.';
 }

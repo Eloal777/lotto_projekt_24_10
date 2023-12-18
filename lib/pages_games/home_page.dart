@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:lotto_projekt_24_10/generated/l10n.dart';
 import 'package:lotto_projekt_24_10/logic/lottery_system_state_provider.dart';
 import 'package:lotto_projekt_24_10/pages_games/navigation_drawer.dart';
 import 'package:lotto_projekt_24_10/pages_games/settings.dart';
@@ -25,7 +24,7 @@ class _LotteryPickerViewState extends ConsumerState<LotteryPickerView> {
     // User user = User(name: 'Alex', birth: DateTime(1985), language: 'language', darkMode: false);
     final lotterySystemsState = ref.watch(lotterySystemsProvider);
     final provider = ref.read(lotterySystemsProvider.notifier);
-
+    final translation = lotterySystemsState.translation;
     return Scaffold(
       backgroundColor: Colors.transparent,
       appBar: AppBar(
@@ -33,7 +32,7 @@ class _LotteryPickerViewState extends ConsumerState<LotteryPickerView> {
         centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 6, 133, 207),
         title: Text(
-          S.of(context).lottoGenerator,
+          translation.lottoGenerator,
           style: const TextStyle(color: Colors.white),
         ),
       ),
@@ -62,7 +61,7 @@ class _LotteryPickerViewState extends ConsumerState<LotteryPickerView> {
                       alignment: Alignment.center,
                       child: Center(
                         child: Text(
-                          lotterySystemsState.user?.name ?? S.of(context).herzlichWillkommen,
+                          lotterySystemsState.user?.name ?? translation.herzlichWillkommen,
                           style: const TextStyle(
                             color: Color.fromARGB(255, 255, 255, 255),
                             fontSize: 20,
@@ -87,7 +86,7 @@ class _LotteryPickerViewState extends ConsumerState<LotteryPickerView> {
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
-                            S.of(context).wasMchtenSieNHeuteSpielen,
+                            translation.wasMchtenSieNHeuteSpielen,
                             textAlign: TextAlign.center,
                             style: const TextStyle(
                               color: Color.fromARGB(255, 255, 255, 255),

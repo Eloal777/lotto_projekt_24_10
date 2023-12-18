@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:lotto_projekt_24_10/generated/l10n.dart';
 import 'package:lotto_projekt_24_10/models/lottery_system.dart';
 import 'package:lotto_projekt_24_10/models/lottery_tip.dart';
 import 'package:lotto_projekt_24_10/pages_games/home_page.dart';
@@ -21,10 +20,14 @@ class SystemPage extends ConsumerWidget {
 
   ///Final Property: The class has a final property system of type LotterySystem, which is assigned the value passed to the constructor.
   final LotterySystem system;
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(lotterySystemsProvider);
     final stateProvider = ref.read(lotterySystemsProvider.notifier);
+    final lotterySystemsState = ref.watch(lotterySystemsProvider);
+    final translation = lotterySystemsState.translation;
+
     // final relevantTipps = <LotteryTip>[];
     // for (final tipp in state.lotteryTips) {
     //   if (tipp.gameId == system.id) {
@@ -70,12 +73,15 @@ class SystemPage extends ConsumerWidget {
                 height: 15,
               ),
               Text(
-                S.of(context).willkommen,
-                style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
+                translation.willkommen,
+                style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
               ),
               Padding(
                 padding: const EdgeInsets.all(12.0),
-                child: Text(system.gameDescription),
+                child: Text(
+                  system.gameDescription,
+                  textAlign: TextAlign.center,
+                ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -90,7 +96,7 @@ class SystemPage extends ConsumerWidget {
                         stateProvider.deleteTippsOfSystem(system);
                       },
                       child: Text(
-                        S.of(context).listeLeeren,
+                        translation.listeLeeren,
                         style: TextStyle(
                           color: system.textColor,
                         ),
@@ -105,7 +111,7 @@ class SystemPage extends ConsumerWidget {
                         stateProvider.addTippsToSystem(system);
                       },
                       child: Text(
-                        S.of(context).plus1tipp,
+                        translation.plus1tipp,
                         style: TextStyle(
                           color: system.textColor,
                           fontSize: 15,
@@ -119,92 +125,6 @@ class SystemPage extends ConsumerWidget {
                   child: Column(
                     children: [
                       const SizedBox(height: 45),
-                      // SizedBox(
-                      //   width: 300,
-                      //   child: Padding(
-                      //     padding: const EdgeInsets.all(12.0),
-                      //     child: ElevatedButton(
-                      //       style: ElevatedButton.styleFrom(
-                      //         backgroundColor: system.gameColor,
-                      //         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                      //         textStyle:
-                      //             const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
-                      //       ),
-                      //       onPressed: () {
-                      //         Navigator.of(context).pushReplacement(
-                      //           MaterialPageRoute(
-                      //             builder: (context) => SystemResultPage(
-                      //               result: system,
-                      //             ),
-                      //           ),
-                      //         );
-                      //       },
-                      //       child: Text(
-                      //         'Zufallszahlen',
-                      //         style: TextStyle(
-                      //           color: system.textColor,
-                      //         ),
-                      //       ),
-                      //     ),
-                      //   ),
-                      // ),
-                      // SizedBox(
-                      //   width: 300,
-                      //   child: Padding(
-                      //     padding: const EdgeInsets.all(12.0),
-                      //     child: ElevatedButton(
-                      //       style: ElevatedButton.styleFrom(
-                      //         backgroundColor: system.gameColor,
-                      //         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                      //         textStyle:
-                      //             const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
-                      //       ),
-                      //       onPressed: () {
-                      //         Navigator.of(context).pushReplacement(
-                      //           MaterialPageRoute(
-                      //               builder: (context) => SystemResultPage(
-                      //                     result: system,
-                      //                   )),
-                      //         );
-                      //       },
-                      //       child: Text(
-                      //         'Lieblingszahlen',
-                      //         style: TextStyle(
-                      //           color: system.textColor,
-                      //         ),
-                      //       ),
-                      //     ),
-                      //   ),
-                      // ),
-                      // SizedBox(
-                      //   width: 300,
-                      //   child: Padding(
-                      //     padding: const EdgeInsets.all(12.0),
-                      //     child: ElevatedButton(
-                      //       style: ElevatedButton.styleFrom(
-                      //         backgroundColor: system.gameColor,
-                      //         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                      //         textStyle:
-                      //             const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
-                      //       ),
-                      //       onPressed: () {
-                      //         Navigator.of(context).pushReplacement(
-                      //           MaterialPageRoute(
-                      //             builder: (context) => SystemResultPage(
-                      //               result: system,
-                      //             ),
-                      //           ),
-                      //         );
-                      //       },
-                      //       child: Text(
-                      //         'Geburtstagtagszahlen',
-                      //         style: TextStyle(
-                      //           color: system.textColor,
-                      //         ),
-                      //       ),
-                      //     ),
-                      //   ),
-                      // ),
                       for (final tipp in relevantTipps)
                         LotteryTipWidget(
                           lotteryTipp: tipp,
@@ -266,7 +186,7 @@ class LotteryTipWidget extends ConsumerWidget {
                             fontWeight: FontWeight.w500,
                             fontSize: 14,
                             color: i >= lotteryTipp.tipp.length - system.superNumbers
-                                ? const Color.fromARGB(255, 6, 97, 233)
+                                ? const Color.fromARGB(255, 135, 136, 135)
                                 : system.textColor,
                           ),
                         ),

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:lotto_projekt_24_10/logic/i_translations.dart';
 import 'package:lotto_projekt_24_10/models/lottery_draw.dart';
 import 'package:lotto_projekt_24_10/models/lottery_system.dart';
 import 'package:lotto_projekt_24_10/models/lottery_system_state.dart';
 import 'package:lotto_projekt_24_10/models/lottery_tip.dart';
+import 'package:lotto_projekt_24_10/translations/de_translation.dart';
 import 'package:lotto_projekt_24_10/user.dart';
 
 ///A Variable that saves the State of this file
@@ -30,7 +32,7 @@ class LotterySystemsStateProvider extends Notifier<LotterySystemsState> {
             id: 'id1',
             name: 'Lotto 6 aus 49',
             superNumbers: 1,
-            gameDescriptionDe: 'Lassen sie sich Zahlen Generieren die ihnen vielleicht zum großem Glück verhelfen.',
+            gameDescription: 'Lassen sie sich Zahlen Generieren die ihnen vielleicht zum großem Glück verhelfen.',
             draws: [
               LotteryDraw(min: 1, max: 49, draws: 6, sorted: true),
               LotteryDraw(min: 0, max: 9, draws: 1),
@@ -43,7 +45,7 @@ class LotterySystemsStateProvider extends Notifier<LotterySystemsState> {
             id: 'id2',
             name: 'Euro Jackpot',
             superNumbers: 2,
-            gameDescriptionDe: 'Lassen sie sich Zahlen Generieren die ihnen vielleicht zum großem Glück verhelfen.',
+            gameDescription: 'Lassen sie sich Zahlen Generieren die ihnen vielleicht zum großem Glück verhelfen.',
             draws: [
               LotteryDraw(min: 1, max: 50, draws: 5, sorted: true),
               LotteryDraw(min: 1, max: 12, draws: 2, sorted: true),
@@ -53,39 +55,42 @@ class LotterySystemsStateProvider extends Notifier<LotterySystemsState> {
             textColor: const Color.fromRGBO(240, 191, 76, 1),
           ),
           LotterySystem(
-              id: 'id3',
-              name: 'Lotto Super 6',
-              superNumbers: 0,
-              gameDescriptionDe: 'Lassen sie sich Zahlen für ihren Schein generieren um bei Super 6 teilzunehmen.',
-              draws: [
-                LotteryDraw(min: 0, max: 9, draws: 1),
-                LotteryDraw(min: 0, max: 9, draws: 1),
-                LotteryDraw(min: 0, max: 9, draws: 1),
-                LotteryDraw(min: 0, max: 9, draws: 1),
-                LotteryDraw(min: 0, max: 9, draws: 1),
-                LotteryDraw(min: 0, max: 9, draws: 1),
-              ],
-              iconPath: 'assets/icons/super6.png',
-              gameColor: const Color.fromRGBO(195, 0, 96, 1),
-              textColor: const Color.fromRGBO(255, 255, 255, 1)),
+            id: 'id3',
+            name: 'Lotto Super 6',
+            superNumbers: 0,
+            gameDescription: 'Lassen sie sich Zahlen für ihren Schein generieren um bei Super 6 teilzunehmen.',
+            draws: [
+              LotteryDraw(min: 0, max: 9, draws: 1),
+              LotteryDraw(min: 0, max: 9, draws: 1),
+              LotteryDraw(min: 0, max: 9, draws: 1),
+              LotteryDraw(min: 0, max: 9, draws: 1),
+              LotteryDraw(min: 0, max: 9, draws: 1),
+              LotteryDraw(min: 0, max: 9, draws: 1),
+            ],
+            iconPath: 'assets/icons/super6.png',
+            gameColor: const Color.fromRGBO(195, 0, 96, 1),
+            textColor: const Color.fromRGBO(255, 255, 255, 1),
+          ),
           LotterySystem(
-              id: 'id4',
-              name: 'Spiel 77',
-              superNumbers: 0,
-              gameDescriptionDe: 'Lassen sie sich Zahlen für ihren Schein generieren um bei Spiel 77 teilzunehmen.',
-              draws: [
-                LotteryDraw(min: 0, max: 9, draws: 1),
-                LotteryDraw(min: 0, max: 9, draws: 1),
-                LotteryDraw(min: 0, max: 9, draws: 1),
-                LotteryDraw(min: 0, max: 9, draws: 1),
-                LotteryDraw(min: 0, max: 9, draws: 1),
-                LotteryDraw(min: 0, max: 9, draws: 1),
-                LotteryDraw(min: 0, max: 9, draws: 1),
-              ],
-              iconPath: 'assets/icons/spiel77.png',
-              gameColor: const Color.fromRGBO(1, 150, 219, 1),
-              textColor: const Color.fromARGB(255, 255, 255, 255)),
+            id: 'id4',
+            name: 'Spiel 77',
+            superNumbers: 0,
+            gameDescription: 'Lassen sie sich Zahlen für ihren Schein generieren um bei Spiel 77 teilzunehmen.',
+            draws: [
+              LotteryDraw(min: 0, max: 9, draws: 1),
+              LotteryDraw(min: 0, max: 9, draws: 1),
+              LotteryDraw(min: 0, max: 9, draws: 1),
+              LotteryDraw(min: 0, max: 9, draws: 1),
+              LotteryDraw(min: 0, max: 9, draws: 1),
+              LotteryDraw(min: 0, max: 9, draws: 1),
+              LotteryDraw(min: 0, max: 9, draws: 1),
+            ],
+            iconPath: 'assets/icons/spiel77.png',
+            gameColor: const Color.fromRGBO(1, 150, 219, 1),
+            textColor: const Color.fromARGB(255, 255, 255, 255),
+          ),
         ],
+        translation: DeTranslation(),
       );
 
   ///This Function deletes a Tip of Numbers of a selected game from the app
@@ -116,5 +121,9 @@ class LotterySystemsStateProvider extends Notifier<LotterySystemsState> {
         darkMode: darkmoder,
       ),
     );
+  }
+
+  void changeTranslation({required ITranslation translation}) {
+    state = state.copyWith(translation: translation);
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:lotto_projekt_24_10/generated/l10n.dart';
+import 'package:lotto_projekt_24_10/logic/lottery_system_state_provider.dart';
 import 'package:lotto_projekt_24_10/models/lottery_system.dart';
 import 'package:lotto_projekt_24_10/pages_games/navigation_drawer.dart';
 
@@ -13,94 +13,98 @@ class SystemResultPage extends ConsumerWidget {
   final LotterySystem result;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) => Scaffold(
-        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-        appBar: AppBar(
-          centerTitle: true,
-          backgroundColor: result.gameColor,
-          title: Text(
-            result.name,
-            style: TextStyle(
-              color: result.textColor,
-            ),
+  Widget build(BuildContext context, WidgetRef ref) {
+    final lotterySystemsState = ref.watch(lotterySystemsProvider);
+    final translation = lotterySystemsState.translation;
+    return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: result.gameColor,
+        title: Text(
+          result.name,
+          style: TextStyle(
+            color: result.textColor,
           ),
         ),
-        drawer: const AppNavigationDrawer(),
-        body: Center(
-          child: ListView(
-            children: [
-              Column(
-                children: [
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: result.gameColor,
-                          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                        ),
-                        onPressed: () {
-                          Navigator.pop(context);
+      ),
+      drawer: const AppNavigationDrawer(),
+      body: Center(
+        child: ListView(
+          children: [
+            Column(
+              children: [
+                const SizedBox(
+                  height: 30,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: result.gameColor,
+                        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                      ),
+                      onPressed: () {
+                        Navigator.pop(context);
 
-                          // Navigator.of(context).pushReplacement(
-                          //   MaterialPageRoute(builder: (context) => const EuroJackpotSelectPage()),
-                          // );
-                        },
-                        child: Text(
-                          S.of(context).zurck,
-                          style: TextStyle(
-                            color: result.textColor,
-                          ),
+                        // Navigator.of(context).pushReplacement(
+                        //   MaterialPageRoute(builder: (context) => const EuroJackpotSelectPage()),
+                        // );
+                      },
+                      child: Text(
+                        translation.zurck,
+                        style: TextStyle(
+                          color: result.textColor,
                         ),
                       ),
-                      ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: result.gameColor,
-                          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    ),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: result.gameColor,
+                        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                      ),
+                      onPressed: () {},
+                      child: Text(
+                        translation.speichern,
+                        style: TextStyle(
+                          color: result.textColor,
                         ),
-                        onPressed: () {},
-                        child: Text(
-                          S.of(context).speichern,
-                          style: TextStyle(
-                            color: result.textColor,
+                      ),
+                    ),
+                  ],
+                ),
+                Container(
+                  margin: const EdgeInsets.only(top: 30.0, bottom: 60),
+                  height: 1200,
+                  width: 350,
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 232, 233, 235),
+                    borderRadius: BorderRadiusDirectional.circular(40),
+                  ),
+                  child: Column(
+                    children: [
+                      ListTile(
+                        title: Center(
+                          child: Text(
+                            // '''Ergebnisse\n ${result.tipp()}''',
+                            translation.ergebnissenResult,
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(
+                              fontSize: 25,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                         ),
                       ),
                     ],
                   ),
-                  Container(
-                    margin: const EdgeInsets.only(top: 30.0, bottom: 60),
-                    height: 1200,
-                    width: 350,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 232, 233, 235),
-                      borderRadius: BorderRadiusDirectional.circular(40),
-                    ),
-                    child: Column(
-                      children: [
-                        ListTile(
-                          title: Center(
-                            child: Text(
-                              // '''Ergebnisse\n ${result.tipp()}''',
-                              S.of(context).ergebnissenResult(result),
-                              textAlign: TextAlign.center,
-                              style: const TextStyle(
-                                fontSize: 25,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
+                ),
+              ],
+            ),
+          ],
         ),
-      );
+      ),
+    );
+  }
 }

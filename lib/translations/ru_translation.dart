@@ -61,4 +61,10 @@ class RuTranslation implements ITranslation {
   String get listeLeeren => 'Очистить список';
   @override
   String get plus1tipp => '+1 Ряд';
+  @override
+  String get gameDescription => 'Давайте сгенерируем числа, которые может быть помогут вам добиться большой удачи.';
+  @override
+  String get gameDescriptions6 => 'Сгенерируйте номера для вашего билета на участие в Super 6.';
+  @override
+  String get gameDescriptions77 => 'Сгенерируйте номера для вашего билета на участие в Игре 77.';
 }

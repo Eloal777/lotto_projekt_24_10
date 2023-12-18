@@ -12,9 +12,7 @@ class LotterySystem {
   final String name;
 
   ///This Variable saves the Description of the Game, means This game rules...
-  final String gameDescriptionDe;
-  final String gameDescriptionRu;
-  final String gameDescriptionEn;
+  final String gameDescription;
 
   ///This Variable saves how often it needs to draw numbers that the game is ready
   final List<LotteryDraw> draws;
@@ -35,9 +33,7 @@ class LotterySystem {
   LotterySystem({
     required this.id,
     required this.name,
-    required this.gameDescriptionDe,
-    required this.gameDescriptionRu,
-    required this.gameDescriptionEn,
+    required this.gameDescription,
     required this.draws,
     required this.iconPath,
     required this.gameColor,

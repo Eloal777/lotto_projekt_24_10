@@ -1,3 +1,4 @@
+import 'package:lotto_projekt_24_10/logic/i_translations.dart';
 import 'package:lotto_projekt_24_10/models/lottery_system.dart';
 import 'package:lotto_projekt_24_10/models/lottery_tip.dart';
 import 'package:lotto_projekt_24_10/user.dart';
@@ -12,11 +13,13 @@ class LotterySystemsState {
 
   ///User
   final User? user;
+  final ITranslation translation;
 
   ///The Lotterysystemstate checks the State of the lotterySystems an lotteryTips if this are changed
   const LotterySystemsState({
     required this.lotterySystems,
     required this.lotteryTips,
+    required this.translation,
     this.user,
   });
 
@@ -37,10 +40,12 @@ class LotterySystemsState {
     List<LotterySystem>? lotterySystems,
     List<LotteryTip>? lotteryTips,
     User? newUser,
+    ITranslation? translation,
   }) =>
       LotterySystemsState(
         lotterySystems: lotterySystems ?? this.lotterySystems,
         lotteryTips: lotteryTips ?? this.lotteryTips,
         user: newUser ?? user,
+        translation: translation ?? this.translation,
       );
 }
